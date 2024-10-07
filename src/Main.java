@@ -226,14 +226,14 @@ public class Main {
         }
         return result;
     }
-    public double pow (int x, int y) {
+    public int pow (int x, int y) {
         if (y < 0) {
             throw new IllegalArgumentException("Invalid input: exponent must be non-negative.");
         }
         if (y == 0) {
             return 1;
         }
-        double result = 1;
+        int result = 1;
         for (int i = 0; i < y; i++) {
             result *= x;
         }

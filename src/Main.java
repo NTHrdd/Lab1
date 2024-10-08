@@ -1,6 +1,5 @@
 import java.util.Random;
 import java.util.Scanner;
-import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
@@ -282,22 +281,18 @@ public class Main {
         System.out.println("You guessed in " + num_attempt + " attempts.");
     }
     //Task 4
-    public int[] read_arr (){
+    public int[] read_arr() {
         Scanner sc = new Scanner(System.in);
-        ArrayList<Integer> numbers = new ArrayList<>();
         String input = sc.nextLine();
         if (input == null || input.isEmpty()) {
             return null;
         }
         String[] stringNumbers = input.replace(",", " ").split(" ");
-        for (String str : stringNumbers) {
-            int number = Integer.parseInt(str);
-            numbers.add(number);
+        int[] arr = new int[stringNumbers.length];
+        for (int i = 0; i < stringNumbers.length; i++) {
+            arr[i] = Integer.parseInt(stringNumbers[i]);
         }
-        int[] arr = new int[numbers.size()];
-        for (int i = 0; i < numbers.size(); i++) {
-            arr[i] = numbers.get(i);
-        }
+
         return arr;
     }
     public void write_arr (int [] arr) {
